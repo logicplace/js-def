@@ -101,7 +101,7 @@ function _err(str){
 
 function def(func){
 	if(is(func,Function)){
-		var fname = func.name,args,optional=false
+		var fname = func.name,args,optional=false,
 		    order = paramNames(func);
 		//Basic format: Type_name for required, Type_name$ for optional
 		//Optional values are specifically set to undefined
@@ -126,10 +126,10 @@ function def(func){
 						return _err("Function%f argument %i must be of type %o",fname,i,args[i][0]);
 					}
 				}
-				else if(tmp[3])arguments[i] = undefined;
+				else if(args[i][3])arguments[i] = undefined;
 				else{
 					return _err("Function%f argument %i was omitted."+(
-						tmp[0]?" Must be of type %o":""),i,tmp[0]
+						args[i][0]?" Must be of type %o":""),fname,i,args[i][0]
 					)
 				}
 				func[args[i][1]] = arguments[i];
