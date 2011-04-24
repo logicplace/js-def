@@ -99,6 +99,10 @@ function _err(str){
 	return;
 }
 
+function defarg(x,d){
+	return (typeof(x) == 'undefined')?d:x;
+}
+
 function def(func){
 	if(is(func,Function)){
 		var fname = func.name,args,optional=false,

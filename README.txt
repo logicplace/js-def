@@ -10,8 +10,8 @@ How to use:
 var def = require("def.js").def; //If using from Node.JS
 var myFunc = def(function myFunc(prefix,Number_body$,String_suffix$){
 	// Defaults:
-	body = this.body || 1;
-	suffix = this.suffix || "";
+	body = defarg(this.body,1);
+	suffix = defarg(this.suffix,"");
 	
 	return "" + (prefix + body) + suffix;
 });
