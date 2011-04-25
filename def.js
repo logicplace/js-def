@@ -62,7 +62,7 @@ function is(x,type){
 }
 
 function paramNames(func,order){
-	var tmp = func.toString().match(/\(([\s\S]*?)\)/)[1].replace(/\/\*.*?\*\//g,"").split(",")
+	var tmp = func.toString().replace(/\/\*.*?\*\//g,"").match(/\(([\s\S]*?)\)/)[1].split(",")
 	if(1 in arguments){
 		for(var x=0;x<tmp.length;x++){
 			order[tmp[x].trim()] = x;
