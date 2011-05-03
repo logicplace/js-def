@@ -7,7 +7,7 @@ Argument typing and optionalness is taken from the argument name:
 4) Type_name$ //type checking, optional
 
 How to use:
-var def = require("def.js").def; //If using from Node.JS
+var def = require("def.js"); //If using from Node.JS
 var myFunc = def(function myFunc(prefix,Number_body$,String_suffix$){
 	// Defaults:
 	body = defarg(this.body,1);

@@ -145,5 +145,5 @@ function def(func){
 
 //Export function if this is require'd by Node.JS
 if(typeof(exports) != "undefined"){
-	exports.def = def;
+	module.exports = def;
 }
